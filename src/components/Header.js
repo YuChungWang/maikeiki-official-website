@@ -2,15 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
+  handleOnClick = () => {
+    const { simpleAction } = this.props;
+    simpleAction('test redux action success!');
+  };
+
   render() {
-    const { type } = this.props;
-    console.warn(type);
-    return <div>`${type}`</div>;
+    const { text } = this.props;
+    return (
+      <div>
+        <button type="button" onClick={this.handleOnClick}>
+          Test redux action
+        </button>
+        <div>{text}</div>
+      </div>
+    );
   }
 }
 
 Header.propTypes = {
-  type: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+  simpleAction: PropTypes.func.isRequired,
 };
 
 export default Header;

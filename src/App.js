@@ -1,14 +1,15 @@
-import './App.css';
-
-import React from 'react';
+import React, { Component } from 'react';
 import HeaderContainer from './containers/HeaderContainer';
 
-function App() {
-  return (
-    <div className="App">
-      <HeaderContainer />
-    </div>
-  );
+class App extends Component {
+  render() {
+    console.warn(this.props);
+    return (
+      <div className="App">
+        <HeaderContainer />
+      </div>
+    );
+  }
 }
 
 export default App;
