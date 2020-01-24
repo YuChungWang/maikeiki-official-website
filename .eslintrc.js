@@ -5,10 +5,6 @@ module.exports = {
     es6: true
   },
   extends: ["airbnb", "prettier", "prettier/flowtype", "prettier/react"],
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
-  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -18,6 +14,8 @@ module.exports = {
   },
   plugins: ["prettier"],
   rules: {
+    'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
+
     "no-console": [
       "error",
       {
@@ -53,5 +51,12 @@ module.exports = {
         trailingComma: "all"
       }
     ]
-  }
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
+  },
 };
