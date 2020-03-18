@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import HeaderContainer from './containers/HeaderContainer';
+import Navbar from 'components/Navbar/Navbar';
+import Slider from 'components/Slider/Slider';
+import 'normalize.css';
 
 class App extends Component {
   render() {
-    console.warn(this.props);
     return (
       <div className="App">
-        <HeaderContainer />
+        <Navbar />
+        <Slider />
       </div>
     );
   }
