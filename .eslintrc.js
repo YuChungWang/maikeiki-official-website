@@ -14,6 +14,8 @@ module.exports = {
   },
   plugins: ["prettier"],
   rules: {
+    "react/jsx-props-no-spreading": "off",
+
     'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
 
     "no-console": [

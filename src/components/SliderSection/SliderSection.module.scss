@@ -1,0 +1,19 @@
+
+
+.container {
+  width: 100%;
+  height: 360px;
+  background: #dcdcdc;
+}
+
+.bg-slider {
+  height: 360px;
+  margin: 5px 5px 0;
+}
+
+@for $i from 1 through 6 {
+  .bg-slider-#{$i} {
+    background: url('../../assets/bg/bg-cake#{$i}.png') center no-repeat;
+    background-size: cover;
+  }
+}

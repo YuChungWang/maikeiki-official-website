@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from 'components/Navbar/Navbar';
-import Slider from 'components/Slider/Slider';
+import SliderSection from 'components/SliderSection/SliderSection';
 import 'normalize.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Slider />
+        <SliderSection />
       </div>
     );
   }
