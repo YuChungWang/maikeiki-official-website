@@ -34,10 +34,26 @@ class Navbar extends PureComponent {
             </Link>
           </div>
           <div className={styles['third-part-link-section']}>
-            <div className={classnames(styles.icon, styles['icon-facebook'])} />
-            <div
-              className={classnames(styles.icon, styles['icon-instagram'])}
-            />
+            <a
+              aria-label="facebook-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/maikeiki/"
+            >
+              <div
+                className={classnames(styles.icon, styles['icon-facebook'])}
+              />
+            </a>
+            <a
+              aria-label="instagram-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/maikeiki/"
+            >
+              <div
+                className={classnames(styles.icon, styles['icon-instagram'])}
+              />
+            </a>
           </div>
         </div>
 
