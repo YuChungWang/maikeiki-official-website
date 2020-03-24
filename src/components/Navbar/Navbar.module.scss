@@ -31,6 +31,10 @@
     border: 1px solid $bright-gray;
     background: url('~assets/logo/img-logo.jpg') center no-repeat;
     background-size: contain;
+
+    &:hover {
+      border-color: $light-brown;
+    }
   }
   
   .route-text {
@@ -38,14 +42,11 @@
     padding: 6px;
     color: $davy-gray;
     font-size: $font-size-h3;
+    text-decoration: none;
     cursor: pointer;
 
-    &:first-child {
-      margin-right: 60px;
-    }
-
     &:hover {
-      color: $dim-gold;
+      color: $vivid-gray;
     }
   }
 }

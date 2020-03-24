@@ -1,9 +1,11 @@
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import React, { PureComponent } from 'react';
+
 import Slider from 'react-slick';
 import classnames from 'classnames';
 import styles from './SliderSection.module.scss';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 const settings = {
   dots: true,

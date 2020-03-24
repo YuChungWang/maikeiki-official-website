@@ -1,5 +1,3 @@
-
-
 .container {
   width: 100%;
   height: 360px;
@@ -13,7 +11,7 @@
 
 @for $i from 1 through 6 {
   .bg-slider-#{$i} {
-    background: url('../../assets/bg/bg-cake#{$i}.png') center no-repeat;
+    background: url('~assets/bg/bg-cake#{$i}.png') center no-repeat;
     background-size: cover;
   }
 }

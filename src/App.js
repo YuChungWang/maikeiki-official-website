@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Navbar from 'components/Navbar/Navbar';
-import SliderSection from 'components/SliderSection/SliderSection';
 import 'normalize.css';
+
+import React, { Component } from 'react';
+
+import Navbar from 'components/Navbar/Navbar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Navbar />
-        <SliderSection />
       </div>
     );
   }
