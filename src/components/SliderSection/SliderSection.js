@@ -8,13 +8,15 @@ import classnames from 'classnames';
 import styles from './SliderSection.module.scss';
 
 const settings = {
-  dots: true,
   infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true,
+  fade: true,
+  autoplaySpeed: 5000,
+  slidesToShow: 1,
 };
 
-const sliderArr = [1, 2, 3, 4, 5, 6];
+const sliderArr = [1, 2, 3, 4];
 
 class SliderSection extends PureComponent {
   render() {

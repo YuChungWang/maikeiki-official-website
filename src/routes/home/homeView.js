@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Logo from 'components/Logo/Logo';
 import SliderSection from 'components/SliderSection/SliderSection';
 import styles from './homeView.module.scss';
 
@@ -8,6 +9,11 @@ class aboutView extends Component {
     return (
       <div className={styles.container}>
         <SliderSection />
+        <div className={styles['banner-section']}>
+          <Logo className={styles.logo} />
+          <h1 className={styles.slogan}>handmade, flavorful &amp; healthy</h1>
+          <h1 className={styles.slogan}>for new lifestyle</h1>
+        </div>
       </div>
     );
   }
