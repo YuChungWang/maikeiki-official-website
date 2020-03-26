@@ -60,17 +60,31 @@ class Navbar extends PureComponent {
     };
   }
 
-  handleMenuClick = () => {
+  handleMenuBtnClick = () => {
     this.setState(prevState => ({
       isShow: !prevState.isShow,
     }));
   };
 
   render() {
+    const { isShow } = this.state;
     return (
       <Router>
         <div className={styles.container}>
-          <div className={styles['show-up-nav']}>
+          <div
+            role="button"
+            tabIndex={0}
+            className={styles['btn-menu']}
+            onClick={this.handleMenuBtnClick}
+          >
+            menu
+          </div>
+          <div
+            className={classnames(styles['show-up-nav'], {
+              [styles['is-show']]: isShow,
+              [styles['is-hide']]: !isShow,
+            })}
+          >
             <ShowUpNav />
           </div>
         </div>

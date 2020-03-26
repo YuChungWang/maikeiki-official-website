@@ -14,6 +14,8 @@ module.exports = {
   },
   plugins: ["prettier"],
   rules: {
+    'jsx-a11y/click-events-have-key-events': 'off',
+
     "react/jsx-props-no-spreading": "off",
 
     'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],

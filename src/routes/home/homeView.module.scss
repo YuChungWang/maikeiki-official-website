@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  overflow: hidden;
 }
 
 .banner-section {
@@ -25,4 +26,8 @@
     line-height: 30px;
     color: white;
   }
+}
+
+.empty {
+  height: 200vh;
 }

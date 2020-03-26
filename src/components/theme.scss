@@ -1,0 +1,13 @@
+@font-face {
+  font-family: HKGrotesk-Medium;
+  src: local('HKGrotesk-Medium'), url('../fonts/HKGrotesk-Medium.otf') format("opentype");
+}
+
+@font-face {
+  font-family: NotoSansCJKtc-Light;
+  src: local('NotoSansCJKtc-Light'), url('../fonts/NotoSansCJKtc-Light.ttf') format('truetype');
+}
+
+html {
+  font-family: HKGrotesk-Medium, NotoSansCJKtc-Light;
+}

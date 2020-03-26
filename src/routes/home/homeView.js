@@ -14,6 +14,7 @@ class aboutView extends Component {
           <h1 className={styles.slogan}>handmade, flavorful &amp; healthy</h1>
           <h1 className={styles.slogan}>for new lifestyle</h1>
         </div>
+        <div className={styles.empty} />
       </div>
     );
   }
