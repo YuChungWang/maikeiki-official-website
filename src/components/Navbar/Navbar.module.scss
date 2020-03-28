@@ -2,37 +2,89 @@
 @import '~components/theme.scss';
 
 .container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 66px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 32px;
+  padding: 24px 28px 0 16px;
+  box-sizing: border-box;
   background: transparent;
   transition: background 1s;
   z-index: 1;
 }
 
+.main-section {
+  display: flex;
+  align-items: flex-end;
+}
+
 .btn-menu {
+  padding: 4px;
   color: white;
   font-size: 26px;
-  cursor: pointer;
   font-family: HKGrotesk-Medium;
+  cursor: pointer;
+
+  &.show-up-btn-menu-style {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    color: black;
+  }
+}
+
+.text-site {
+  padding-left: 12px;
+  padding-bottom: 6px;
+  font-size: $font-size-h4;
+  color: $vivid-gray;
+}
+
+.follow-us-section {
+  display: flex;
+  flex-direction: column;
+
+  .text-follow-us {
+    margin-bottom: 4px;
+    font-size: $font-size-h4;
+    color: $vivid-gray;
+  }
+
+  .third-part-link-section {
+    display: flex;
+
+    .icon {
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+    
+      &.icon-instagram {
+        margin-right: 6px;
+        background: url('~assets/icon/icon-instagram.png') center no-repeat;
+        background-size: contain;
+      }
+
+      &.icon-facebook {
+        background: url('~assets/icon/icon-facebook.png') center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
 }
 
 .show-up-nav {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 66px;
   background: white;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-80px);
 
   &.is-show {
     animation: navShow 1s;
@@ -45,82 +97,60 @@
   }
 }
 
-.main-section {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  .logo-section {
-    width: 100px;
-    height: 100%;
-    margin-right: 34px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo {
-    width: 46px;
-    height: 46px;
-  }
   
-  .route-text {
-    margin-right: 50px;
-    padding: 6px;
-    color: $davy-gray;
-    font-size: $font-size-h3;
-    text-decoration: none;
-    cursor: pointer;
+.route-text {
+  position: absolute;
+  top: 36px;
+  color: $davy-gray;
+  font-size: $font-size-h3;
+  text-decoration: none;
+  cursor: pointer;
 
-    &:hover {
-      color: $vivid-gray;
-    }
+  &:hover {
+    color: $vivid-gray;
   }
-}
 
-.third-part-link-section {
-  display: flex;
-  align-items: center;
+  &.route-home {
+    left: 130px;
+  }
 
-  .icon {
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
+  &.route-about {
+    left: 182px;
+  }
 
-    &.icon-facebook {
-      margin-right: 14px;
-      background: url('~assets/icon/icon-facebook.png') center no-repeat;
-      background-size: contain;
-    }
-  
-    &.icon-instagram {
-      background: url('~assets/icon/icon-instagram.png') center no-repeat;
-      background-size: contain;
-    }
+  &.route-products {
+    left: 302px;
+  }
+
+  &.route-ingredients {
+    left: 386px;
+  }
+
+  &.route-order-info {
+    left: 470px;
   }
 }
 
 @keyframes navShow {
   0% {
+    height: 0;
     opacity: 0;
-    transform: translateY(-80px);
   }
 
   100% {
+    height: 60px;
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @keyframes navHide {
   0% {
+    height: 60px;
     opacity: 1;
-    transform: translateY(0);
   }
 
   100% {
+    height: 0;
     opacity: 0;
-    transform: translateY(-80px);
   }
 }

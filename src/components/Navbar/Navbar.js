@@ -4,53 +4,61 @@ import React, { PureComponent } from 'react';
 import About from 'routes/about/aboutView';
 import Home from 'routes/home/homeView';
 import IngredientsView from 'routes/ingredients/ingredientsView';
-import Logo from 'components/Logo/Logo';
 import OrderInfo from 'routes/orderInfo/orderInfoView';
 import Products from 'routes/products/productsView';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Navbar.module.scss';
 
-const ShowUpNav = () => (
+const ShowUpNav = ({ handleMenuBtnClick }) => (
   <>
-    <div className={styles['main-section']}>
-      <div className={styles['logo-section']}>
-        <Link to="/">
-          <Logo className={styles.logo} />
-        </Link>
-      </div>
-      <Link to="/about" className={styles['route-text']}>
-        關於Mai Keiki
-      </Link>
-      <Link to="/products" className={styles['route-text']}>
-        所有產品
-      </Link>
-      <Link to="/ingredients" className={styles['route-text']}>
-        食材使用
-      </Link>
-      <Link to="/order-info" className={styles['route-text']}>
-        訂購需知
-      </Link>
+    <div
+      role="button"
+      tabIndex={0}
+      className={classnames(
+        styles['btn-menu'],
+        styles['show-up-btn-menu-style'],
+      )}
+      onClick={handleMenuBtnClick}
+    >
+      menu
     </div>
-    <div className={styles['third-part-link-section']}>
-      <a
-        aria-label="facebook-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.facebook.com/maikeiki/"
-      >
-        <div className={classnames(styles.icon, styles['icon-facebook'])} />
-      </a>
-      <a
-        aria-label="instagram-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.instagram.com/maikeiki/"
-      >
-        <div className={classnames(styles.icon, styles['icon-instagram'])} />
-      </a>
-    </div>
+    <Link
+      to="/"
+      className={classnames(styles['route-text'], styles['route-home'])}
+    >
+      首頁
+    </Link>
+    <Link
+      to="/about"
+      className={classnames(styles['route-text'], styles['route-about'])}
+    >
+      關於Mai Keiki
+    </Link>
+    <Link
+      to="/products"
+      className={classnames(styles['route-text'], styles['route-products'])}
+    >
+      所有產品
+    </Link>
+    <Link
+      to="/ingredients"
+      className={classnames(styles['route-text'], styles['route-ingredients'])}
+    >
+      食材使用
+    </Link>
+    <Link
+      to="/order-info"
+      className={classnames(styles['route-text'], styles['route-order-info'])}
+    >
+      訂購需知
+    </Link>
   </>
 );
+
+ShowUpNav.propTypes = {
+  handleMenuBtnClick: PropTypes.func.isRequired,
+};
 
 class Navbar extends PureComponent {
   constructor(props) {
@@ -71,13 +79,43 @@ class Navbar extends PureComponent {
     return (
       <Router>
         <div className={styles.container}>
-          <div
-            role="button"
-            tabIndex={0}
-            className={styles['btn-menu']}
-            onClick={this.handleMenuBtnClick}
-          >
-            menu
+          <div className={styles['main-section']}>
+            <div
+              role="button"
+              tabIndex={0}
+              className={styles['btn-menu']}
+              onClick={this.handleMenuBtnClick}
+            >
+              menu
+            </div>
+            <div className={styles['text-site']}>
+              Mai Keiki official website
+            </div>
+          </div>
+          <div className={styles['follow-us-section']}>
+            <div className={styles['text-follow-us']}>follow us</div>
+            <div className={styles['third-part-link-section']}>
+              <a
+                aria-label="instagram-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/maikeiki/"
+              >
+                <div
+                  className={classnames(styles.icon, styles['icon-instagram'])}
+                />
+              </a>
+              <a
+                aria-label="facebook-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/maikeiki/"
+              >
+                <div
+                  className={classnames(styles.icon, styles['icon-facebook'])}
+                />
+              </a>
+            </div>
           </div>
           <div
             className={classnames(styles['show-up-nav'], {
@@ -85,7 +123,7 @@ class Navbar extends PureComponent {
               [styles['is-hide']]: !isShow,
             })}
           >
-            <ShowUpNav />
+            <ShowUpNav handleMenuBtnClick={this.handleMenuBtnClick} />
           </div>
         </div>
         <Switch>
