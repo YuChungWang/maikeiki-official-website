@@ -10,19 +10,31 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Navbar.module.scss';
 
+const BtnMenu = ({ handleMenuBtnClick, isShowUpNav }) => (
+  <div
+    role="button"
+    tabIndex={0}
+    className={classnames(styles['btn-menu'], {
+      [styles['is-show-up-nav']]: isShowUpNav,
+    })}
+    onClick={handleMenuBtnClick}
+  >
+    menu
+  </div>
+);
+
+BtnMenu.propTypes = {
+  handleMenuBtnClick: PropTypes.func.isRequired,
+  isShowUpNav: PropTypes.bool,
+};
+
+BtnMenu.defaultProps = {
+  isShowUpNav: false,
+};
+
 const ShowUpNav = ({ handleMenuBtnClick }) => (
   <>
-    <div
-      role="button"
-      tabIndex={0}
-      className={classnames(
-        styles['btn-menu'],
-        styles['show-up-btn-menu-style'],
-      )}
-      onClick={handleMenuBtnClick}
-    >
-      menu
-    </div>
+    <BtnMenu handleMenuBtnClick={handleMenuBtnClick} isShowUpNav />
     <Link
       to="/"
       className={classnames(styles['route-text'], styles['route-home'])}
@@ -80,14 +92,7 @@ class Navbar extends PureComponent {
       <Router>
         <div className={styles.container}>
           <div className={styles['main-section']}>
-            <div
-              role="button"
-              tabIndex={0}
-              className={styles['btn-menu']}
-              onClick={this.handleMenuBtnClick}
-            >
-              menu
-            </div>
+            <BtnMenu handleMenuBtnClick={this.handleMenuBtnClick} />
             <div className={styles['text-site']}>
               Mai Keiki official website
             </div>
