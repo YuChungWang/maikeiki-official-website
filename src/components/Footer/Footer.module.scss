@@ -1,0 +1,16 @@
+@import '~components/variables.scss';
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 120px;
+  background: $davy-gray;
+}
+
+.text-copy-right {
+  position: absolute;
+  top: 16px;
+  right: 28px;
+  font-size: $font-size-h4;
+  color: white;
+}

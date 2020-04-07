@@ -1,11 +1,6 @@
-import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import React, { PureComponent } from 'react';
 
-import About from 'routes/about/aboutView';
-import Home from 'routes/home/homeView';
-import IngredientsView from 'routes/ingredients/ingredientsView';
-import OrderInfo from 'routes/orderInfo/orderInfoView';
-import Products from 'routes/products/productsView';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Navbar.module.scss';
@@ -89,66 +84,45 @@ class Navbar extends PureComponent {
   render() {
     const { isShow } = this.state;
     return (
-      <Router>
-        <div className={styles.container}>
-          <div className={styles['main-section']}>
-            <BtnMenu handleMenuBtnClick={this.handleMenuBtnClick} />
-            <div className={styles['text-site']}>
-              Mai Keiki official website
-            </div>
-          </div>
-          <div className={styles['follow-us-section']}>
-            <div className={styles['text-follow-us']}>follow us</div>
-            <div className={styles['third-part-link-section']}>
-              <a
-                aria-label="instagram-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.instagram.com/maikeiki/"
-              >
-                <div
-                  className={classnames(styles.icon, styles['icon-instagram'])}
-                />
-              </a>
-              <a
-                aria-label="facebook-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/maikeiki/"
-              >
-                <div
-                  className={classnames(styles.icon, styles['icon-facebook'])}
-                />
-              </a>
-            </div>
-          </div>
-          <div
-            className={classnames(styles['show-up-nav'], {
-              [styles['is-show']]: isShow,
-              [styles['is-hide']]: !isShow,
-            })}
-          >
-            <ShowUpNav handleMenuBtnClick={this.handleMenuBtnClick} />
+      <div className={styles.container}>
+        <div className={styles['main-section']}>
+          <BtnMenu handleMenuBtnClick={this.handleMenuBtnClick} />
+          <div className={styles['text-site']}>Mai Keiki official website</div>
+        </div>
+        <div className={styles['follow-us-section']}>
+          <div className={styles['text-follow-us']}>follow us</div>
+          <div className={styles['third-part-link-section']}>
+            <a
+              aria-label="instagram-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/maikeiki/"
+            >
+              <div
+                className={classnames(styles.icon, styles['icon-instagram'])}
+              />
+            </a>
+            <a
+              aria-label="facebook-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/maikeiki/"
+            >
+              <div
+                className={classnames(styles.icon, styles['icon-facebook'])}
+              />
+            </a>
           </div>
         </div>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/products">
-            <Products />
-          </Route>
-          <Route path="/ingredients">
-            <IngredientsView />
-          </Route>
-          <Route path="/order-info">
-            <OrderInfo />
-          </Route>
-        </Switch>
-      </Router>
+        <div
+          className={classnames(styles['show-up-nav'], {
+            [styles['is-show']]: isShow,
+            [styles['is-hide']]: !isShow,
+          })}
+        >
+          <ShowUpNav handleMenuBtnClick={this.handleMenuBtnClick} />
+        </div>
+      </div>
     );
   }
 }

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import styles from './productsView.module.scss';
 
-class productsView extends Component {
+class productsView extends PureComponent {
   render() {
     return <div className={styles.container}>Products</div>;
   }

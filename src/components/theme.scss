@@ -8,10 +8,24 @@
   src: local('NotoSansCJKtc-Light'), url('../fonts/NotoSansCJKtc-Light.ttf') format('truetype');
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 html {
   font-family: HKGrotesk-Medium, NotoSansCJKtc-Light;
 }
 
 *:focus {
   outline:none
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
 }

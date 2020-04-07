@@ -14,21 +14,23 @@ module.exports = {
   },
   plugins: ["prettier"],
   rules: {
+    'no-underscore-dangle': 'off',
+    
     'jsx-a11y/click-events-have-key-events': 'off',
 
-    "react/jsx-props-no-spreading": "off",
+    'react/jsx-props-no-spreading': 'off',
 
     'import/no-extraneous-dependencies': ['error', { packageDir: '.' }],
 
-    "no-console": [
-      "error",
+    'no-console': [
+      'error',
       {
-        allow: ["warn", "error", "info"]
+        allow: ['warn', 'error', 'info']
       }
     ],
 
-    "prefer-destructuring": [
-      "error",
+    'prefer-destructuring': [
+      'error',
       {
         VariableDeclarator: {
           array: false,
@@ -48,11 +50,11 @@ module.exports = {
 
     'react/prefer-stateless-function': 'off',
 
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
         singleQuote: true,
-        trailingComma: "all"
+        trailingComma: 'all'
       }
     ]
   },

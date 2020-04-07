@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import styles from './orderInfoView.module.scss';
 
-class orderInfoView extends Component {
+class orderInfoView extends PureComponent {
   render() {
     return <div className={styles.container}>OrderInfo</div>;
   }
