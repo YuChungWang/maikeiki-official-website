@@ -1,6 +1,6 @@
-## Mai keiki official website
+## Mai Keiki official website
 
-This is Mai keiki official website.
+This is Mai Keiki official website.
 
 ## Built With
 
